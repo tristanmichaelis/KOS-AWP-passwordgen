@@ -11,10 +11,14 @@ CONFIG += c++11
 SOURCES += \
     generator.cpp \
     main.cpp \
+    maincontroller.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    PasswordConstants.h \
+    db_cxx.h \
     generator.h \
+    maincontroller.h \
     mainwindow.h
 
 FORMS += \

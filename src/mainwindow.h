@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "generator.h"
+
+#define PASSWORD_MINLENGTH 1
+#define PASSWORD_MAXLENGTH 99
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,7 +19,30 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_pushButton_generate_clicked() { generate_passwords(); };
+
+    void on_radioButton_lower_clicked() { handle_active_button(); };
+    void on_radioButton_upper_clicked() { handle_active_button(); };
+    void on_radioButton_numbers_clicked() { handle_active_button(); };
+    void on_radioButton_special_clicked() { handle_active_button(); };
+
+    void on_spinBox_length_valueChanged(int) { check_spinbox_minmax();};
+
+    void on_spinBox_lower_valueChanged(int) { restrict_characters(); };
+    void on_spinBox_upper_valueChanged(int) { restrict_characters(); };
+    void on_spinBox_numbers_valueChanged(int) { restrict_characters(); };
+    void on_spinBox_special_valueChanged(int) { restrict_characters(); };
+
 private:
     Ui::MainWindow *ui;
+    void handle_active_button();
+    void restrict_characters();
+    void check_spinbox_minmax();
+    void generate_passwords();
+    void mytest();
 };
+
+template<typename Func> void for_every_charset(const Func& f);
+
 #endif // MAINWINDOW_H
