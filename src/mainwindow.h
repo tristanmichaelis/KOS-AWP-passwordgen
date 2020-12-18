@@ -20,19 +20,19 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_generate_clicked() { generate_passwords(); };
+    inline void on_pushButton_generate_clicked() { generate_passwords(); };
 
-    void on_radioButton_lower_clicked() { handle_active_button(); };
-    void on_radioButton_upper_clicked() { handle_active_button(); };
-    void on_radioButton_numbers_clicked() { handle_active_button(); };
-    void on_radioButton_special_clicked() { handle_active_button(); };
+    inline void on_radioButton_lower_clicked() { handle_active_button(); };
+    inline void on_radioButton_upper_clicked() { handle_active_button(); };
+    inline void on_radioButton_numbers_clicked() { handle_active_button(); };
+    inline void on_radioButton_special_clicked() { handle_active_button(); };
 
-    void on_spinBox_length_valueChanged(int) { check_spinbox_minmax();};
+    inline void on_spinBox_length_valueChanged(int) { check_spinbox_minmax();};
 
-    void on_spinBox_lower_valueChanged(int) { restrict_characters(); };
-    void on_spinBox_upper_valueChanged(int) { restrict_characters(); };
-    void on_spinBox_numbers_valueChanged(int) { restrict_characters(); };
-    void on_spinBox_special_valueChanged(int) { restrict_characters(); };
+    inline void on_spinBox_lower_valueChanged(int) { restrict_characters(); };
+    inline void on_spinBox_upper_valueChanged(int) { restrict_characters(); };
+    inline void on_spinBox_numbers_valueChanged(int) { restrict_characters(); };
+    inline void on_spinBox_special_valueChanged(int) { restrict_characters(); };
 
 private:
     Ui::MainWindow *ui;

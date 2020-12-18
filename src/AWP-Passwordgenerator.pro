@@ -10,14 +10,17 @@ CONFIG += c++11
 
 SOURCES += \
     generator.cpp \
+    lfsr_generator.cpp \
     main.cpp \
     maincontroller.cpp \
     mainwindow.cpp
 
 HEADERS += \
     PasswordConstants.h \
+    db.h \
     db_cxx.h \
     generator.h \
+    lfsr_generator.h \
     maincontroller.h \
     mainwindow.h
 
